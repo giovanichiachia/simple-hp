@@ -103,6 +103,8 @@ def get_optparser():
 
     parser = optparse.OptionParser(usage=usage)
 
+    learn_algo_default = learning_algos['default']
+    learning_algos.pop('default', None)
     learn_algo_opts = ' OPTIONS=%s' % (learning_algos.keys())
 
     parser.add_option("--hp_fname", "-F",
@@ -134,7 +136,7 @@ def get_optparser():
                         )
 
     parser.add_option("--learning_algo", "-A",
-                      default='svm',
+                      default=learn_algo_default,
                       type="str",
                       metavar="STR",
                       help="[DEFAULT='%default']" + learn_algo_opts)

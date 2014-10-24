@@ -29,7 +29,12 @@ pip install argparse
 pip install SQLAlchemy 
 pip install sphinx
 pip install nose -I
-pip install setuptools 
+
+# -- setuptools 0.7 is bugged, use 0.6 instead
+#pip install setuptools 
+wget -O /tmp/setuptools.egg https://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg
+sh /tmp/setuptools.egg
+
 pip install --upgrade PIL
 
 pip install pyzmq
